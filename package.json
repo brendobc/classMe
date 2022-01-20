@@ -8,8 +8,8 @@
     "dev": "npm run build-sass-prod && concurrently --kill-others \"npm run json-server\" \"npm run watch-sass-dev\"",
     "prod": "npm run build-sass-prod && npm run json-server",
     "json-server": "json-server --watch db.json --port 3000",
-    "watch-sass-dev": "node-sass --watch --update --style=expanded styles/scss -o assets/style",
-    "build-sass-prod": "node-sass --style=compressed --include-path scss styles/scss -o assets/style"
+    "watch-sass-dev": "sass --watch --update --style=compressed styles/scss/index.scss:assets/style/css/index.css",
+    "build-sass-prod": "sass --style=compressed styles/scss/index.scss:assets/style/css/index.css"
   },
   "repository": {
     "type": "git",
@@ -23,6 +23,6 @@
   "homepage": "https://github.com/brendobc/classMe#readme",
   "dependencies": {
     "concurrently": "^7.0.0",
-    "node-sass": "^7.0.1"
+    "sass": "^1.49.0"
   }
 }
