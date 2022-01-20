@@ -30,5 +30,6 @@ function montarHTML() {
 }
 
 include(document.getElementById('component'), 'teste');
+console.log('teste!');
 
 export { include }
