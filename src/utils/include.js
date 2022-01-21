@@ -1,32 +1,21 @@
-const baseUrl = '/resources/components/';
+import { componentMap } from '../variables/staticComponentsUrl.js';
 
 /**
- * TODO: explanation
+ * Recebe um elemento e adiciona um componente estático pronto de acordo com o @param componentName
  * @param {Element} parentElement elemento que receberá um elemento filho
- * @param {String} url endereço do arquivo com o html a ser adicionado no @param parentElement
+ * @param {String} componentName nome do elemento estático a ser adicionado no @param parentElement
  */
-async function include(parentElement, url) {
-    const html = await fetch(`${baseUrl}${url}.html`);
-    let body = await html.text();
-
-    const dataset = parentElement.dataset;
-    let paramName = '';
-    for(const d in dataset) {
-
-        if(!d.startsWith('param')){
-            continue;
-        }
-
-        paramName = d.replace('param', '');
-        paramName = paramName.charAt('0').toLowerCase() + paramName.slice(1);
-        body = body.replace('${' + paramName + '}', dataset[d]);
+async function includeStaticElement(parentElement, componentName) {
+    const urlComponent = componentMap.get(componentName);
+    
+    if(!parentElement || !urlComponent) {
+        return;
     }
+
+    const html = await fetch(urlComponent);
+    let body = await html.text();
     
     parentElement.innerHTML = body;
 }
 
-function montarHTML() {
-
-}
-
-export { include }
+export { includeStaticElement }
