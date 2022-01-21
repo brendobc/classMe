@@ -42,6 +42,6 @@ E tudo pronto! Para interromper a execução, basta pressionar ```Ctrl + C``` no
 * Listagem de tarefas
 
 
-## Status do projeto
+## :traffic_light: Status do projeto
 Iniciado há pouco tempo.
 Ainda há ideias a serem validadas e muuuito código a ser escrito!
