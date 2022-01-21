@@ -1,6 +1,6 @@
 # classMe
 
-## Descrição
+## :memo: Descrição
 Plataforma gameficada para entrega de atividades escolares (apenas front-end por enquanto)
 
 
