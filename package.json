@@ -5,9 +5,10 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "npm run build-sass-prod && concurrently --kill-others \"npm run json-server\" \"npm run watch-sass-dev\"",
-    "prod": "npm run build-sass-prod && npm run json-server",
+    "dev": "npm run build-sass-prod && concurrently --kill-others \"npm run json-server\" \"npm run watch-sass-dev\" \"npm run http-server\"",
+    "prod": "npm run build-sass-prod && concurrently --kill-others \"npm run json-server\" \"npm run http-server\"",
     "json-server": "json-server --watch db.json --port 3000",
+    "http-server": "http-server",
     "watch-sass-dev": "sass --watch --update --style=compressed styles/scss/index.scss:assets/style/css/index.css",
     "build-sass-prod": "sass --style=compressed styles/scss/index.scss:assets/style/css/index.css"
   },
@@ -23,6 +24,8 @@
   "homepage": "https://github.com/brendobc/classMe#readme",
   "dependencies": {
     "concurrently": "^7.0.0",
+    "http-server": "^14.1.0",
+    "json-server": "^0.17.0",
     "sass": "^1.49.0"
   }
 }
