@@ -31,4 +31,20 @@
         border: 0;
         border-bottom: 2px solid #3F7373;
     }
+
+    ::-webkit-input-placeholder {
+        color: $secondary;
+    }
+    
+    :-moz-placeholder { /* Firefox 18- */
+        color: $secondary;
+    }
+    
+    ::-moz-placeholder {  /* Firefox 19+ */
+        color: $secondary;
+    }
+    
+    :-ms-input-placeholder {
+        color: $secondary;
+    }
 }
